@@ -1,0 +1,44 @@
+[gd_scene load_steps=10 format=3 uid="uid://bqnqn8rgik3os"]
+
+[ext_resource type="Shader" uid="uid://4rlycqhx3hx7" path="res://scenes/visual_effects/sword_slash_1/sword_slash_01.gdshader" id="1_3um40"]
+[ext_resource type="Script" uid="uid://vcyk38t1ruja" path="res://scenes/visual_effects/sword_slash_1/test_01.gd" id="1_40n4p"]
+[ext_resource type="Texture2D" uid="uid://c8se881g77kci" path="res://scenes/visual_effects/sword_slash_1/SplitTrail.png" id="1_pxven"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_3um40"]
+offset = Vector3(18.3, 0, 0)
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_g1x1w"]
+noise = SubResource("FastNoiseLite_3um40")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_g1x1w"]
+shader = ExtResource("1_3um40")
+shader_parameter/offset = Vector2(0, 1)
+shader_parameter/strength = 0.5
+shader_parameter/val = 0.48
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_g1x1w")
+
+[sub_resource type="Curve" id="Curve_jb3xl"]
+_data = [Vector2(0.0125392, 0), 0.0, 0.0, 0, 0, Vector2(0.442006, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_g1x1w"]
+colors = PackedColorArray(0, 0, 0, 0, 1, 1, 1, 1)
+
+[sub_resource type="Environment" id="Environment_3um40"]
+background_mode = 3
+glow_enabled = true
+
+[node name="SwordSlash01" type="Line2D"]
+material = SubResource("ShaderMaterial_g1x1w")
+scale = Vector2(1, 0.5)
+points = PackedVector2Array(-70.0471, -71.3681, -62.7145, -77.8903, -54.7779, -83.6623, -46.3138, -88.6286, -37.4037, -92.7414, -28.1333, -95.961, -18.592, -98.2565, -8.87166, -99.6057, 0.934128, -99.9956, 10.7309, -99.4226, 20.4244, -97.892, 29.9211, -95.4187, 39.1297, -92.0264, 47.9614, -87.7479, 56.3313, -82.6244, 64.1587, -76.7051, 71.3681, -70.0471, 77.8903, -62.7145, 83.6623, -54.7779, 88.6286, -46.3138, 92.7414, -37.4037, 95.961, -28.1333, 98.2565, -18.592, 99.6057, -8.87166, 99.9956, 0.934128, 99.4226, 10.7309, 97.892, 20.4244, 95.4187, 29.9211, 92.0264, 39.1297, 87.7479, 47.9614, 82.6244, 56.3313, 76.7051, 64.1587, 70.0471, 71.3681, 62.7145, 77.8903, 54.7779, 83.6623, 46.3138, 88.6286, 37.4037, 92.7414, 28.1333, 95.961, 18.592, 98.2565, 8.87166, 99.6057, -0.934128, 99.9956, -10.7309, 99.4226, -20.4244, 97.892, -29.9211, 95.4187, -39.1297, 92.0264, -47.9614, 87.7479, -56.3313, 82.6244, -64.1587, 76.7051, -71.3681, 70.0471, -77.8903, 62.7145, -83.6623, 54.7779, -88.6286, 46.3138, -92.7414, 37.4037, -95.961, 28.1333, -98.2565, 18.592, -99.6057, 8.87166, -99.9956, -0.934128, -99.4226, -10.7309, -97.892, -20.4244, -95.4187, -29.9211, -92.0264, -39.1297, -87.7479, -47.9614, -82.6244, -56.3313, -76.7051, -64.1587, -70.0471, -71.3681)
+width = 100.0
+width_curve = SubResource("Curve_jb3xl")
+gradient = SubResource("Gradient_g1x1w")
+texture = ExtResource("1_pxven")
+texture_mode = 2
+script = ExtResource("1_40n4p")
+rotation_angle = 60.485
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_3um40")

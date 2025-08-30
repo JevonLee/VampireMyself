@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Ability" load_steps=3 format=3 uid="uid://dt78db7i36874"]
+
+[ext_resource type="PackedScene" uid="uid://dnorgprtajhus" path="res://scenes/ability/sword_ability_controller/sword_ability_controller.tscn" id="1_acgx6"]
+[ext_resource type="Script" uid="uid://cypoe6qd8onqv" path="res://resources/upgrades/ability.gd" id="2_h6d1q"]
+
+[resource]
+script = ExtResource("2_h6d1q")
+ability_controller = ExtResource("1_acgx6")
+id = "sword"
+name = "初始之剑"
+max_quantity = 1
+description = "初始剑，自动攻击"
+metadata/_custom_type_script = "uid://bksm158jkstjt"

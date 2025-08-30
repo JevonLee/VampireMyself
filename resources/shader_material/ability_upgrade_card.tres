@@ -1,0 +1,14 @@
+[gd_resource type="ShaderMaterial" load_steps=4 format=3 uid="uid://cxb04x5blrqpw"]
+
+[ext_resource type="Shader" uid="uid://dqw6oy4acsq2h" path="res://shaders/ability_upgrade_card.gdshader" id="1_akr2g"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_m44y0"]
+frequency = 0.0455
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_c4j7u"]
+noise = SubResource("FastNoiseLite_m44y0")
+
+[resource]
+shader = ExtResource("1_akr2g")
+shader_parameter/val = 0.0
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_c4j7u")

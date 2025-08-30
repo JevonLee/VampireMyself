@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=3 uid="uid://du06uf6t3isgk"]
+
+[ext_resource type="Shader" uid="uid://c6o34788rbdoe" path="res://shaders/trail_component.gdshader" id="1_fpw1h"]
+[ext_resource type="Texture2D" uid="uid://b8cm67x4n1031" path="res://scenes/ability/axe_blibity/tile_0118.png" id="1_io4ec"]
+[ext_resource type="Script" uid="uid://bmaikwfe4rjl4" path="res://scenes/component/trail_component.gd" id="2_lbjjq"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lbfl5"]
+shader = ExtResource("1_fpw1h")
+shader_parameter/offset = Vector2(1.1, 0)
+shader_parameter/repeat = Vector2(0.455, 1.76)
+
+[sub_resource type="Curve" id="Curve_fpw1h"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[node name="TrailComponent" type="Line2D"]
+top_level = true
+texture_repeat = 2
+material = SubResource("ShaderMaterial_lbfl5")
+points = PackedVector2Array(29, 0, 0, 0)
+width = 14.0
+width_curve = SubResource("Curve_fpw1h")
+texture = ExtResource("1_io4ec")
+texture_mode = 2
+script = ExtResource("2_lbjjq")

@@ -1,0 +1,120 @@
+[gd_scene load_steps=9 format=3 uid="uid://c8ql2bmcg8iw2"]
+
+[ext_resource type="Texture2D" uid="uid://bce6ergmrgbx1" path="res://scenes/projectiles/terra_blade_proj/Projectile_984.png" id="1_r1u0u"]
+[ext_resource type="Script" uid="uid://c1kcg2vbaebff" path="res://scenes/projectiles/terra_blade_proj/terra_blade_proj.gd" id="1_w47vk"]
+[ext_resource type="PackedScene" uid="uid://bmdw45p7v1jli" path="res://scenes/component/hit_box_component.tscn" id="2_cxqno"]
+
+[sub_resource type="Animation" id="Animation_w47vk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D2:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_cxqno"]
+resource_name = "default"
+length = 0.1
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D2:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0uwvo"]
+_data = {
+&"RESET": SubResource("Animation_w47vk"),
+&"default": SubResource("Animation_cxqno")
+}
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_r1u0u"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(1, 60, 1)
+direction = Vector3(-1, 0, 0)
+spread = 15.0
+initial_velocity_min = 58.19
+initial_velocity_max = 116.39
+gravity = Vector3(0, 0, 0)
+scale_min = 3.0
+scale_max = 5.0
+hue_variation_min = -0.55
+hue_variation_max = -0.27
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w47vk"]
+size = Vector2(53, 127)
+
+[node name="TerraBladeProj" type="Node2D" node_paths=PackedStringArray("hit_box")]
+script = ExtResource("1_w47vk")
+hit_box = NodePath("HitBoxComponent")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.0784314, 0.796078, 0, 1)
+texture = ExtResource("1_r1u0u")
+vframes = 4
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+modulate = Color(0.0941176, 0.717647, 0, 1)
+scale = Vector2(0.8, 0.637)
+texture = ExtResource("1_r1u0u")
+vframes = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_0uwvo")
+}
+autoplay = "default"
+speed_scale = 0.5
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+position = Vector2(15.9, 0)
+emitting = false
+amount = 500
+sub_emitter = NodePath(".")
+process_material = SubResource("ParticleProcessMaterial_r1u0u")
+
+[node name="HitBoxComponent" parent="." instance=ExtResource("2_cxqno")]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBoxComponent"]
+position = Vector2(16.5, 0.5)
+shape = SubResource("RectangleShape2D_w47vk")

@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://b7oqk80nk5hse"]
+
+[ext_resource type="Script" uid="uid://bb24b7275rcvw" path="res://scenes/ability/death_ascension_controller/death_ascension_controller.gd" id="1_uikv2"]
+[ext_resource type="PackedScene" uid="uid://dkbl7imlnubq6" path="res://scenes/ability/death_ascension/death_ascension.tscn" id="2_nrq4y"]
+
+[node name="DeathAscensionController" type="Node"]
+script = ExtResource("1_uikv2")
+death_ability = ExtResource("2_nrq4y")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true

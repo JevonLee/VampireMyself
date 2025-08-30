@@ -1,0 +1,267 @@
+[gd_scene load_steps=14 format=3 uid="uid://btuf3bent40b5"]
+
+[ext_resource type="Texture2D" uid="uid://b0wpumhp0e40" path="res://scenes/ability/terra_blade/Item_757.png" id="1_on4ow"]
+[ext_resource type="Script" uid="uid://caq64bq7j766t" path="res://scenes/ability/terra_blade/terra_blade.gd" id="1_xxodp"]
+[ext_resource type="AudioStream" uid="uid://bo4vqjijfbl3v" path="res://scenes/ability/murasama/MurasamaBigSwing.ogg" id="2_07lx7"]
+[ext_resource type="PackedScene" uid="uid://bpm3k2yswarq0" path="res://scenes/component/jian_qi_component.tscn" id="2_pdidc"]
+[ext_resource type="Shader" uid="uid://7gqeib4xcsm8" path="res://scenes/ability/terra_blade/trail.gdshader" id="4_07lx7"]
+[ext_resource type="PackedScene" uid="uid://bmdw45p7v1jli" path="res://scenes/component/hit_box_component.tscn" id="4_kvms5"]
+[ext_resource type="Texture2D" uid="uid://c0224j1ttjmwg" path="res://scenes/visual_effects/sword_slash_1/SwordSlashTexture.png" id="5_088vj"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_07lx7"]
+shader = ExtResource("4_07lx7")
+shader_parameter/offset1 = Vector2(0.5, 0)
+shader_parameter/offset2 = Vector2(0.2, 0)
+
+[sub_resource type="Animation" id="Animation_pdidc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:skew")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("HitBoxComponent/CollisionShape2D:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("JianQiComponent:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_on4ow"]
+resource_name = "swing"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1.23114, 1.3195),
+"update": 0,
+"values": [-1.91986, 3.49066]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:scale")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(15.4549, 0.732043, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(2, 2), Vector2(1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:skew")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.199128),
+"transitions": PackedFloat32Array(4.59479, 1),
+"update": 0,
+"values": [0.523599, -0.523599]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("HitBoxComponent/CollisionShape2D:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("JianQiComponent:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.100751, 0.199337),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, true]
+}
+tracks/6/type = "method"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath(".")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"spawn_projectile"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_07lx7"]
+resource_name = "swing2"
+length = 0.8
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1.07177, 1),
+"update": 0,
+"values": [-1.44862, 3.49066]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("JianQiComponent:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("HitBoxComponent/CollisionShape2D:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.401228),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xxodp"]
+_data = {
+&"RESET": SubResource("Animation_pdidc"),
+&"swing": SubResource("Animation_on4ow"),
+&"swing2": SubResource("Animation_07lx7")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fjr8s"]
+size = Vector2(114, 142)
+
+[node name="TerraBlade" type="Node2D" node_paths=PackedStringArray("hit_box")]
+process_mode = 3
+script = ExtResource("1_xxodp")
+hit_box = NodePath("HitBoxComponent")
+sfx_1 = ExtResource("2_07lx7")
+
+[node name="JianQiComponent" parent="." node_paths=PackedStringArray("target_position") instance=ExtResource("2_pdidc")]
+visible = false
+texture_repeat = 2
+material = SubResource("ShaderMaterial_07lx7")
+points = PackedVector2Array(-31.8543, 28.2909, -31.8543, 28.2909, -31.8543, 28.2909, -31.8543, 28.2909, -31.8543, 28.2909, -31.8543, 28.2909, -31.8543, 28.2909, -31.8543, 28.2909, -31.8543, 28.2909, -31.8543, 28.2909, -31.8543, 28.2909, -31.8543, 28.2909, -31.8543, 28.2909, -31.8543, 28.2909, -31.8543, 28.2909, -31.8543, 28.2909, -31.8543, 28.2909, -31.8543, 28.2909, -31.8543, 28.2909, -31.8543, 28.2909, -31.8543, 28.2909, -31.8543, 28.2909, -31.8543, 28.2909, -31.8543, 28.2909, -31.8543, 28.2909, -31.8543, 28.2909, -31.8543, 28.2909, -31.8543, 28.2909, -31.8543, 28.2909, -31.8543, 28.2909, -31.8543, 28.2909, -31.8543, 28.2909, -31.8543, 28.2909, -31.8543, 28.2909, -31.8543, 28.2909, -31.8543, 28.2909, -31.8543, 28.2909, -31.8543, 28.2909, -31.8543, 28.2909, -31.8543, 28.2909, -31.8543, 28.2909, -31.8543, 28.2909, -31.8543, 28.2909, -31.8543, 28.2909, -31.8543, 28.2909, -31.8543, 28.2909, -31.8543, 28.2909, -31.8543, 28.2909, -31.8543, 28.2909, -31.8543, 28.2909, -31.8543, 28.2909, -31.8543, 28.2909, -31.8543, 28.2909, -31.8543, 28.2909, -31.8543, 28.2909, -31.8543, 28.2909, -31.8543, 28.2909, -31.8543, 28.2909, -31.8543, 28.2909, -31.8543, 28.2909)
+width = 50.0
+texture = ExtResource("5_088vj")
+target_position = NodePath("../Sprite2D/Marker2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_on4ow")
+offset = Vector2(25, -30)
+
+[node name="Marker2D" type="Marker2D" parent="Sprite2D"]
+position = Vector2(41.896, -43.2777)
+rotation = 0.779812
+scale = Vector2(0.546115, 0.546115)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_xxodp")
+}
+autoplay = "swing2"
+speed_scale = 2.0
+
+[node name="HitBoxComponent" parent="." instance=ExtResource("4_kvms5")]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBoxComponent"]
+position = Vector2(44, 9)
+shape = SubResource("RectangleShape2D_fjr8s")

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="AbilityUpgrade" load_steps=2 format=3 uid="uid://dax66f1dymgc"]
+
+[ext_resource type="Script" uid="uid://bksm158jkstjt" path="res://resources/upgrades/ability_upgrade.gd" id="1_yipwy"]
+
+[resource]
+script = ExtResource("1_yipwy")
+id = "murasama_damage"
+name = "murasama_damage"
+max_quantity = 5
+description = "加快鬼妖村正的伤害10%"
+metadata/_custom_type_script = "uid://bksm158jkstjt"

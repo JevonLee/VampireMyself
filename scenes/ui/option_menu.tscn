@@ -1,0 +1,89 @@
+[gd_scene load_steps=4 format=3 uid="uid://bw81hvvjfyo4s"]
+
+[ext_resource type="Script" uid="uid://63j6bsi5gf13" path="res://scenes/ui/option_menu.gd" id="1_5jsow"]
+[ext_resource type="AudioStream" uid="uid://dqnxx6gugtmgg" path="res://assets/audio/impactMining_001.ogg" id="2_enpjp"]
+[ext_resource type="AudioStream" uid="uid://w7maynpqil6q" path="res://assets/audio/fool for you.mp3" id="3_br56t"]
+
+[node name="OptionMenu" type="CanvasLayer"]
+layer = 2
+script = ExtResource("1_5jsow")
+test_sfx = ExtResource("2_enpjp")
+test_music = ExtResource("3_br56t")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer"]
+custom_minimum_size = Vector2(100, 120)
+layout_mode = 2
+
+[node name="Options" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Options"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "SFX Volumn"
+
+[node name="SfxSlider" type="HSlider" parent="MarginContainer/PanelContainer/VBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+max_value = 1.0
+step = 0.01
+value = 0.44
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer/VBoxContainer2"]
+layout_mode = 2
+text = "Music Volumn"
+
+[node name="MusicSlider" type="HSlider" parent="MarginContainer/PanelContainer/VBoxContainer/VBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+max_value = 1.0
+step = 0.01
+value = 0.23
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="MarginContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer/VBoxContainer3"]
+layout_mode = 2
+text = "Window Mode"
+
+[node name="WindowButton" type="Button" parent="MarginContainer/PanelContainer/VBoxContainer/VBoxContainer3"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "window"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="BackButton" type="Button" parent="MarginContainer/PanelContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Back"
+
+[node name="PlayMusic" type="Button" parent="MarginContainer/PanelContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+text = "TestMusic"

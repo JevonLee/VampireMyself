@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Ability" load_steps=3 format=3 uid="uid://da1qgd8o5kyvh"]
+
+[ext_resource type="PackedScene" uid="uid://dt2aa32o5xvk" path="res://scenes/ability/muramasa_controller/muramasa_controller.tscn" id="1_6g7vp"]
+[ext_resource type="Script" uid="uid://cypoe6qd8onqv" path="res://resources/upgrades/ability.gd" id="1_syn3h"]
+
+[resource]
+script = ExtResource("1_syn3h")
+ability_controller = ExtResource("1_6g7vp")
+id = "muramasa"
+name = "村正太刀"
+max_quantity = 1
+description = "普通村正"
+metadata/_custom_type_script = "uid://cypoe6qd8onqv"

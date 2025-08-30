@@ -1,0 +1,10 @@
+[gd_scene load_steps=4 format=3 uid="uid://bv25kwr8bjw3c"]
+
+[ext_resource type="Script" uid="uid://cg81o0ry584jy" path="res://scenes/ability/terra_blade_controller/terra_blade_controller.gd" id="1_0cd0g"]
+[ext_resource type="PackedScene" uid="uid://btuf3bent40b5" path="res://scenes/ability/terra_blade/terra_blade.tscn" id="2_e18qj"]
+[ext_resource type="PackedScene" uid="uid://c5iwefva5tfr6" path="res://scenes/visual_effects/sparkle/sparkle.tscn" id="3_hw2nl"]
+
+[node name="TerraBladeController" type="Node2D"]
+script = ExtResource("1_0cd0g")
+terra_blade_scene = ExtResource("2_e18qj")
+sparkle_scene = ExtResource("3_hw2nl")

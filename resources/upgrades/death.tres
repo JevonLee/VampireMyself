@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Ability" load_steps=3 format=3 uid="uid://dnll54qagd77v"]
+
+[ext_resource type="PackedScene" uid="uid://b7oqk80nk5hse" path="res://scenes/ability/death_ascension_controller/death_ascension_controller.tscn" id="1_w3h3g"]
+[ext_resource type="Script" uid="uid://cypoe6qd8onqv" path="res://resources/upgrades/ability.gd" id="2_vjj7r"]
+
+[resource]
+script = ExtResource("2_vjj7r")
+ability_controller = ExtResource("1_w3h3g")
+id = "death_ascension"
+name = "死神之镰"
+max_quantity = 1
+description = "添加死神之镰的能力"
+metadata/_custom_type_script = "uid://bksm158jkstjt"

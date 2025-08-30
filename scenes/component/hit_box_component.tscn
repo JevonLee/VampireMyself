@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bmdw45p7v1jli"]
+
+[ext_resource type="Script" uid="uid://dqdyloii3t6m3" path="res://scenes/component/hit_box_component.gd" id="1_1xktj"]
+[ext_resource type="PackedScene" uid="uid://c5iwefva5tfr6" path="res://scenes/visual_effects/sparkle/sparkle.tscn" id="2_bqelb"]
+
+[node name="HitBoxComponent" type="Area2D"]
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("1_1xktj")
+sparkle = ExtResource("2_bqelb")

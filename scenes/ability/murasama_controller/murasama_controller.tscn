@@ -1,0 +1,10 @@
+[gd_scene load_steps=4 format=3 uid="uid://fidcs3p5nrbi"]
+
+[ext_resource type="Script" uid="uid://b4d5cqc723j24" path="res://scenes/ability/murasama_controller/murasama_controller.gd" id="1_4qfeg"]
+[ext_resource type="PackedScene" uid="uid://fbwdhun62fiy" path="res://scenes/ability/murasama/murasama.tscn" id="2_afng3"]
+[ext_resource type="PackedScene" uid="uid://c5iwefva5tfr6" path="res://scenes/visual_effects/sparkle/sparkle.tscn" id="3_avpb4"]
+
+[node name="MurasamaController" type="Node"]
+script = ExtResource("1_4qfeg")
+murasama_scene = ExtResource("2_afng3")
+sparkle = ExtResource("3_avpb4")

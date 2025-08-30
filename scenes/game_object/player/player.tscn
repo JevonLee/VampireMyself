@@ -1,0 +1,257 @@
+[gd_scene load_steps=15 format=3 uid="uid://idudpy4iy1hj"]
+
+[ext_resource type="Script" uid="uid://cx3sr1u1dfeqb" path="res://scenes/game_object/player/player.gd" id="1_rkbax"]
+[ext_resource type="PackedScene" uid="uid://dnorgprtajhus" path="res://scenes/ability/sword_ability_controller/sword_ability_controller.tscn" id="2_gmlin"]
+[ext_resource type="Resource" uid="uid://dt78db7i36874" path="res://resources/upgrades/sword.tres" id="2_pknkg"]
+[ext_resource type="PackedScene" uid="uid://biwcysf22h1rx" path="res://scenes/component/health_component.tscn" id="3_ss5pk"]
+[ext_resource type="Texture2D" uid="uid://bhmykngidetl7" path="res://scenes/game_object/player/player01.png" id="5_pknkg"]
+[ext_resource type="Texture2D" uid="uid://bn1a1j0e5ja1" path="res://scenes/game_object/player/face03.png" id="5_rix40"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_s3670"]
+radius = 45.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ss5pk"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rkbax"]
+radius = 6.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ss5pk"]
+bg_color = Color(0.247059, 0.14902, 0.192157, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tj6oj"]
+bg_color = Color(0.6, 0.992157, 0.6, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.247059, 0.14902, 0.192157, 1)
+
+[sub_resource type="Animation" id="Animation_tj6oj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Visuals/Body:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Visuals/Body:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.2, 0.2)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Visuals/Body:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Visuals/Face:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Visuals/Face:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Visuals/Face:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.196291, 0.207419)]
+}
+
+[sub_resource type="Animation" id="Animation_ss5pk"]
+resource_name = "move"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Visuals/Body:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Visuals/Body:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Visuals/Body:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.333333, 0.666667, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0.2, 0.2), Vector2(0.2, 0.162), Vector2(0.186, 0.228), Vector2(0.2, 0.2)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Visuals/Face:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Visuals/Face:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Visuals/Face:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.333333, 0.666667, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0.2, 0.2), Vector2(0.2, 0.162), Vector2(0.186, 0.228), Vector2(0.2, 0.2)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pknkg"]
+_data = {
+&"RESET": SubResource("Animation_tj6oj"),
+&"move": SubResource("Animation_ss5pk")
+}
+
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("health_component") groups=["Player"]]
+collision_layer = 0
+motion_mode = 1
+script = ExtResource("1_rkbax")
+health_component = NodePath("HealthComponent")
+initial_ability = ExtResource("2_pknkg")
+
+[node name="HealthComponent" parent="." instance=ExtResource("3_ss5pk")]
+max_health = 6.0
+
+[node name="Abilities" type="Node" parent="."]
+unique_name_in_owner = true
+
+[node name="SwordAbilityController" parent="Abilities" instance=ExtResource("2_gmlin")]
+
+[node name="PickupArea2D" type="Area2D" parent="."]
+visible = false
+position = Vector2(0, -6)
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PickupArea2D"]
+shape = SubResource("CircleShape2D_s3670")
+
+[node name="CollisionArea2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionArea2D"]
+position = Vector2(0, -6)
+shape = SubResource("CircleShape2D_ss5pk")
+
+[node name="Visuals" type="Node2D" parent="."]
+
+[node name="Body" type="Sprite2D" parent="Visuals"]
+texture_filter = 1
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("5_pknkg")
+offset = Vector2(0, -35.175)
+
+[node name="Face" type="Sprite2D" parent="Visuals"]
+texture_filter = 1
+scale = Vector2(0.196291, 0.207419)
+texture = ExtResource("5_rix40")
+offset = Vector2(9.305, -30.245)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(0, -6)
+shape = SubResource("CircleShape2D_rkbax")
+
+[node name="DamageIntervalTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="HealthBar" type="ProgressBar" parent="."]
+custom_minimum_size = Vector2(32, 6)
+offset_left = -16.0
+offset_top = -33.0
+offset_right = 16.0
+offset_bottom = -27.0
+pivot_offset = Vector2(16, 3)
+theme_override_styles/background = SubResource("StyleBoxFlat_ss5pk")
+theme_override_styles/fill = SubResource("StyleBoxFlat_tj6oj")
+max_value = 1.0
+value = 0.5
+show_percentage = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_pknkg")
+}

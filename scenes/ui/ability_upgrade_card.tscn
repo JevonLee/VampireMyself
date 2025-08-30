@@ -1,0 +1,167 @@
+[gd_scene load_steps=20 format=3 uid="uid://0qcvxnk1t36j"]
+
+[ext_resource type="Script" uid="uid://dx3a57vv2jru1" path="res://scenes/ui/ability_upgrade_card.gd" id="1_8ur3e"]
+[ext_resource type="Shader" uid="uid://dqw6oy4acsq2h" path="res://shaders/ability_upgrade_card.gdshader" id="1_m44y0"]
+[ext_resource type="AudioStream" uid="uid://dqtjg7kabsafs" path="res://assets/audio/switch1.ogg" id="3_xicjk"]
+[ext_resource type="AudioStream" uid="uid://cmfktaojlqe3i" path="res://assets/audio/switch2.ogg" id="4_ksxgh"]
+[ext_resource type="AudioStream" uid="uid://dt8resn0r70k0" path="res://assets/audio/switch3.ogg" id="5_g40w5"]
+[ext_resource type="AudioStream" uid="uid://cdv0t6m13r2se" path="res://assets/audio/switch4.ogg" id="6_wv0wr"]
+[ext_resource type="AudioStream" uid="uid://cqkex6lwv5a03" path="res://assets/audio/switch5.ogg" id="7_puu13"]
+[ext_resource type="AudioStream" uid="uid://bm54wx5mpmoab" path="res://assets/audio/switch6.ogg" id="8_kt4ni"]
+[ext_resource type="AudioStream" uid="uid://drq4vfbpnlb2c" path="res://assets/audio/switch7.ogg" id="9_r6bay"]
+[ext_resource type="AudioStream" uid="uid://tjodmh11wect" path="res://assets/audio/switch8.ogg" id="10_ut4pq"]
+[ext_resource type="AudioStream" uid="uid://ubirmbuf2noa" path="res://assets/audio/switch9.ogg" id="11_m713t"]
+[ext_resource type="AudioStream" uid="uid://dy5g230nhsoc6" path="res://assets/audio/switch10.ogg" id="12_gnty3"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_m44y0"]
+frequency = 0.0455
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_c4j7u"]
+noise = SubResource("FastNoiseLite_m44y0")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uhqci"]
+resource_local_to_scene = true
+shader = ExtResource("1_m44y0")
+shader_parameter/val = 0.0
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_c4j7u")
+
+[sub_resource type="Animation" id="Animation_m44y0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_c4j7u"]
+resource_name = "disselected"
+length = 0.4
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.100045, 0.3),
+"transitions": PackedFloat32Array(1, 5.46416, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.2, 1.2), Vector2(1e-05, 1e-05)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.1, 0.298211),
+"transitions": PackedFloat32Array(16.5642, 1),
+"update": 0,
+"values": [0.0, 6.28319]
+}
+
+[sub_resource type="Animation" id="Animation_8ur3e"]
+resource_name = "in"
+length = 0.4
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.101969, 0.20009, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.174533, -0.174533, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.299173),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1, 1), Vector2(1.2, 1.2), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_m44y0"]
+_data = {
+&"RESET": SubResource("Animation_m44y0"),
+&"disselected": SubResource("Animation_c4j7u"),
+&"in": SubResource("Animation_8ur3e")
+}
+
+[node name="AbilityUpgradeCard" type="PanelContainer" groups=["upgrade_card"]]
+material = SubResource("ShaderMaterial_uhqci")
+custom_minimum_size = Vector2(120, 150)
+pivot_offset = Vector2(62, 75)
+script = ExtResource("1_8ur3e")
+sfx_array = Array[AudioStream]([ExtResource("3_xicjk"), ExtResource("4_ksxgh"), ExtResource("5_g40w5"), ExtResource("6_wv0wr"), ExtResource("7_puu13"), ExtResource("8_kt4ni"), ExtResource("9_r6bay"), ExtResource("10_ut4pq"), ExtResource("11_m713t"), ExtResource("12_gnty3")])
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_m44y0")
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+mouse_filter = 2
+theme_type_variation = &"AlternatePanelContainer"
+
+[node name="NameLabel" type="Label" parent="MarginContainer/VBoxContainer/PanelContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0.247059, 0.14902, 0.192157, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 32
+text = "Name"
+horizontal_alignment = 1
+vertical_alignment = 2
+autowrap_mode = 3
+
+[node name="DescriptionLabel" type="Label" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 16
+text = "adasdasdasd中文"
+autowrap_mode = 3

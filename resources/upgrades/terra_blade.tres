@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Ability" load_steps=3 format=3 uid="uid://7a8rnrmdtu32"]
+
+[ext_resource type="PackedScene" uid="uid://bv25kwr8bjw3c" path="res://scenes/ability/terra_blade_controller/terra_blade_controller.tscn" id="1_2yoq5"]
+[ext_resource type="Script" uid="uid://cypoe6qd8onqv" path="res://resources/upgrades/ability.gd" id="2_lk703"]
+
+[resource]
+script = ExtResource("2_lk703")
+ability_controller = ExtResource("1_2yoq5")
+id = "terra_blade"
+name = "泰拉刃"
+max_quantity = 1
+description = "泰拉刃，左键使用"
+metadata/_custom_type_script = "uid://bksm158jkstjt"

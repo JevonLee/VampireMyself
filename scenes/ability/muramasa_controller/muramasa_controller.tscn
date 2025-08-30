@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://dt2aa32o5xvk"]
+
+[ext_resource type="Script" uid="uid://c5ccqgt4vlbc5" path="res://scenes/ability/muramasa_controller/muramasa_controller.gd" id="1_ghctr"]
+[ext_resource type="PackedScene" uid="uid://d2y3i77w4vcwk" path="res://scenes/ability/muramasa/muramasa.tscn" id="2_1q24p"]
+
+[node name="MuramasaController" type="Node2D"]
+script = ExtResource("1_ghctr")
+muramasa_scene = ExtResource("2_1q24p")
+
+[node name="AttackTimer" type="Timer" parent="."]

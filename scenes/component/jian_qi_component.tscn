@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://bpm3k2yswarq0"]
+
+[ext_resource type="Script" uid="uid://d05hyqy5k0dvi" path="res://scenes/component/jian_qi_component.gd" id="1_x1na5"]
+
+[sub_resource type="Gradient" id="Gradient_pdidc"]
+colors = PackedColorArray(0.133333, 0.694118, 0.298039, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_x1na5"]
+gradient = SubResource("Gradient_pdidc")
+fill_from = Vector2(0.841629, 0.221719)
+fill_to = Vector2(0.533937, 0.529412)
+
+[node name="JianQiComponent" type="Line2D"]
+points = PackedVector2Array(27, 0, 0, 0)
+texture = SubResource("GradientTexture2D_x1na5")
+texture_mode = 2
+script = ExtResource("1_x1na5")

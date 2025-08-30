@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="AbilityUpgrade" load_steps=2 format=3 uid="uid://c5dtgsbdf01rq"]
+
+[ext_resource type="Script" uid="uid://bksm158jkstjt" path="res://resources/upgrades/ability_upgrade.gd" id="1_pyxp1"]
+
+[resource]
+script = ExtResource("1_pyxp1")
+id = "sword_rate"
+name = "sword_quickness"
+max_quantity = 5
+description = "加快剑的攻速10%"
+metadata/_custom_type_script = "uid://bksm158jkstjt"

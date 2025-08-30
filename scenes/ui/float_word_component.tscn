@@ -1,0 +1,46 @@
+[gd_scene load_steps=9 format=3 uid="uid://b6fud4bdympq2"]
+
+[ext_resource type="Shader" uid="uid://ce832soxsbbin" path="res://shaders/float_word_component.gdshader" id="1_yam3k"]
+[ext_resource type="Script" uid="uid://omc2821nbhvu" path="res://scenes/ui/float_word_component.gd" id="2_2jrr6"]
+[ext_resource type="Texture2D" uid="uid://cx8b0n888ryfj" path="res://scenes/ui/74C7AF3507F98E6B3B32545F6B962B7A.jpg" id="2_4e4ld"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4e4ld"]
+shader = ExtResource("1_yam3k")
+shader_parameter/final_color = Color(0, 0, 0, 1)
+shader_parameter/number = 0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2jrr6"]
+shader = ExtResource("1_yam3k")
+shader_parameter/number_texture = ExtResource("2_4e4ld")
+shader_parameter/final_color = Color(0, 0, 0, 1)
+shader_parameter/number = 0
+
+[sub_resource type="Curve" id="Curve_4e4ld"]
+_limits = [0.0, 5.0, 0.0, 1.0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.741784, 5), 0.0, 0.0, 0, 0, Vector2(1, 5), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_2jrr6"]
+curve = SubResource("Curve_4e4ld")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_p0g6c"]
+particle_flag_disable_z = true
+direction = Vector3(0, -1, 0)
+spread = 0.0
+initial_velocity_min = 8.0
+initial_velocity_max = 8.0
+angular_velocity_min = -10.0
+angular_velocity_max = 9.99998
+gravity = Vector3(0, 0, 0)
+scale_curve = SubResource("CurveTexture_2jrr6")
+
+[node name="FloatWordComponent" type="Node2D"]
+material = SubResource("ShaderMaterial_4e4ld")
+script = ExtResource("2_2jrr6")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+material = SubResource("ShaderMaterial_2jrr6")
+amount = 1
+sub_emitter = NodePath(".")
+lifetime = 0.5
+process_material = SubResource("ParticleProcessMaterial_p0g6c")

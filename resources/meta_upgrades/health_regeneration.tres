@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="MetaUpgrade" load_steps=2 format=3 uid="uid://bypbag8siixer"]
+
+[ext_resource type="Script" uid="uid://dgwmrgoiao5hb" path="res://resources/meta_upgrades/meta_upgrade.gd" id="1_6pjjw"]
+
+[resource]
+script = ExtResource("1_6pjjw")
+id = "experience_gain"
+max_quantity = 3
+experience_cost = 10
+title = "Health Regen"
+description = "每升一级30s回复1生命"
+metadata/_custom_type_script = "uid://dgwmrgoiao5hb"

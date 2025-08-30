@@ -1,0 +1,29 @@
+[gd_scene load_steps=2 format=3 uid="uid://fmm45y4ot6x2"]
+
+[ext_resource type="Script" uid="uid://42617o7fkfis" path="res://scenes/ui/current_upgrade_ui.gd" id="1_5c2h1"]
+
+[node name="CurrentUpgradeUi" type="CanvasLayer"]
+script = ExtResource("1_5c2h1")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+
+[node name="UpgradeLabel" type="Label" parent="MarginContainer/PanelContainer"]
+unique_name_in_owner = true
+modulate = Color(0.247059, 0.14902, 0.192157, 1)
+layout_mode = 2
+size_flags_horizontal = 0
+text = "123123"

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Ability" load_steps=3 format=3 uid="uid://c6djk1agxugvi"]
+
+[ext_resource type="PackedScene" uid="uid://fidcs3p5nrbi" path="res://scenes/ability/murasama_controller/murasama_controller.tscn" id="1_du8lc"]
+[ext_resource type="Script" uid="uid://cypoe6qd8onqv" path="res://resources/upgrades/ability.gd" id="2_evr0t"]
+
+[resource]
+script = ExtResource("2_evr0t")
+ability_controller = ExtResource("1_du8lc")
+id = "murasama"
+name = "鬼妖村正"
+max_quantity = 1
+description = "鬼妖村正，左键使用"
+metadata/_custom_type_script = "uid://bksm158jkstjt"
