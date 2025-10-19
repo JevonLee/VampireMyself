@@ -12,6 +12,8 @@ func _ready() -> void:
 	current_health = max_health
 
 func damage(damage_account:float) ->void:
+	if owner is Player:	
+		return
 	current_health = max(current_health - damage_account,0)
 	#current_health = clampf(current_health - damage_account,0,100)同样的效果
 	health_changed.emit()
@@ -27,3 +29,4 @@ func check_death() -> void:
 	if current_health == 0:
 		died.emit()
 		owner.queue_free()
+		#ObjectPoolManager.release_object("Enemy",owner)

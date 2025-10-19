@@ -17,7 +17,7 @@ func _ready() -> void:
 	option_button.pressed.connect(on_option_button)
 	quit_button.pressed.connect(on_quit_button)
 	check_button.toggled.connect(on_toggled)
-	AudioManager.play_music(music)
+	#AudioManager.play_music(music)
 	
 	
 func on_play_button() -> void:
@@ -47,6 +47,6 @@ func on_back_pressed(option_menu:Node) -> void:
 
 func on_toggled(toggled_on:bool)-> void:
 	if toggled_on:
-		AudioManager.stop_music()
-	else:
 		AudioManager.play_music(music)
+	else:
+		AudioManager.stop_music()

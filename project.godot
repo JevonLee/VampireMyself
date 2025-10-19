@@ -26,6 +26,7 @@ GameEvents="*res://scenes/autoload/game_events.tscn"
 AudioManager="*res://audio_system/audio_manager.gd"
 ScreenTransition="*res://scenes/autoload/screen_transition.tscn"
 MetaProgression="*res://scenes/autoload/meta_progression.tscn"
+ObjectPoolManager="*res://scenes/autoload/object_pool_manager.tscn"
 
 [debug]
 

@@ -18,8 +18,8 @@ var upgrade_pool:WeightedTable = WeightedTable.new()
 
 
 func _ready() -> void:
-	upgrade_pool.add_item(upgrade_axe,10)
-	upgrade_pool.add_item(upgrade_death,10)
+	#upgrade_pool.add_item(upgrade_axe,10)
+	#upgrade_pool.add_item(upgrade_death,10)
 	upgrade_pool.add_item(upgrade_murasama,10)
 	#upgrade_pool.add_item(upgrade_sword_damage,10)
 	#upgrade_pool.add_item(upgrade_sword_rate,10)
@@ -66,12 +66,15 @@ func apply_upgrade(upgrade:AbilityUpgrade) -> void:
 
 
 func update_upgrade_pool(chosen_upgrade:AbilityUpgrade) -> void:
+	return
 	##此项升级需要依赖另一项升级
 	if chosen_upgrade.id == upgrade_murasama.id :
 		upgrade_pool.add_item(upgrade_murasama_damage,10)
 
 
 func on_level_up(current_level:int) -> void:
+	if upgrade_pool.items.is_empty():
+		return
 	var upgrade_screen_instance = upgrade_screen.instantiate() as UpgradeScreen
 	add_child(upgrade_screen_instance)
 	upgrade_screen_instance.set_ability_upgrades(pick_upgrades())

@@ -1,6 +1,6 @@
 shader_type canvas_item;
 
-uniform vec2 offset = vec2(0,0);
+uniform vec2 offset = vec2(-0.5,0);
 uniform float strength = 0.5;
 uniform float val = 1.0;
 uniform sampler2D noise_texture;

@@ -50,12 +50,18 @@ func spawn_enemy() -> void:
 	
 	var enemy_scene = enemy_table.pick_item()
 	var enemy = enemy_scene.instantiate() as BasicEnemy
-	var entities_layer = get_tree().get_first_node_in_group("EntitiesLayer")
-	entities_layer.add_child(enemy)
+	var entities_layer :Node2D= get_tree().get_first_node_in_group("EntitiesLayer")
+	entities_layer.call_deferred("add_child",enemy)
+	
 	enemy.global_position = get_spawn_position()
+	#var enemy:BasicEnemy = ObjectPoolManager.get_object("Enemy")
+	enemy.appear()
+	#enemy.visible = true
+	#enemy.global_transform.origin = get_spawn_position()
 	
 	
 func on_timer_timeout() -> void:
+	
 	spawn_enemy()
 	
 

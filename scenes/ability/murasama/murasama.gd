@@ -20,7 +20,7 @@ var is_attack:bool = true
 
 func _ready() -> void:
 	animation_player.animation_finished.connect(on_animation_finished)
-	animation_player.play("swing")
+	
 
 func _process(delta: float) -> void:
 	var direction = global_position.direction_to(get_global_mouse_position())
@@ -30,6 +30,7 @@ func _process(delta: float) -> void:
 		scale = Vector2(1,-swing_sign)
 	if get_tree().paused:
 		queue_free()
+		pass
 		
 	#match current_state:
 		#State.SWING1:
@@ -38,11 +39,7 @@ func _process(delta: float) -> void:
 			#animation_player.play("swing2")
 		#State.SWING3:
 			#animation_player.play("swing3")
-	
 
-func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_released("left_click"):
-		queue_free()
 
 
 func play_sfx(sfx:AudioStream) -> void:
@@ -54,4 +51,6 @@ func attack(anim_name:String) -> void:
 
 
 func on_animation_finished(anim_name:StringName) -> void:
-	current_state += 1
+	pass
+	#if anim_name == "swing":
+		#animation_player.play("swing")

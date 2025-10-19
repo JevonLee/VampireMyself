@@ -3,6 +3,7 @@ class_name BasicEnemy
 
 const MAX_SPEED = 50
 
+@onready var health_component: HealthComponent = $HealthComponent
 @onready var visuals: Node2D = $Visuals
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var hurt_box_component: HurtBoxComponent = $HurtBoxComponent
@@ -10,11 +11,17 @@ const MAX_SPEED = 50
 @export var hurt_sfx:AudioStream ##受击音效应该从武器那边传过来
 @export var footstep_sfx:AudioStream
 
+static var count:int = 0
 
 func _ready() -> void:
 	hurt_box_component.hurting.connect(on_hurting)
 	
-	
+
+func appear()->void:
+	#health_component.current_health = health_component.max_health
+	count += 1
+	print("enemy_count:",count)
+
 func _process(delta: float) -> void:
 	#if is_hurt: 留个纪念，之前都是根据信号改变bool值，然后在process里操作
 		#velocity -= get_player_direction() * knockback
@@ -81,3 +88,6 @@ func on_hurting(knockback:float) -> void:
 	tween.tween_callback(apply_shake)
 	tween.tween_callback(enemy_shake.bind(1,0.1))
 	
+func _release() ->void:
+	visible = false
+	global_transform.origin = Vector2(10000,10000)

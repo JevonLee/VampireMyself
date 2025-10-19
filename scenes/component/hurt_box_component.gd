@@ -19,7 +19,7 @@ func on_area_entered(area:Area2D) -> void:
 		return
 	if health_component == null :
 		return	
-	var direction = (owner as BasicEnemy).get_player_direction().angle() - PI/2
+	var direction = (owner as BasicEnemy).get_player_direction().angle()
 	var hit_box = area as HitBoxComponent
 	health_component.damage(hit_box.damage)
 	hurting.emit(hit_box.knock_back)
@@ -42,8 +42,7 @@ func on_area_entered(area:Area2D) -> void:
 		return
 	var sparkle = hit_box.sparkle.instantiate() as Node2D
 	sparkle.global_position = global_position
-	
 	foreground.add_child(sparkle)
 	sparkle.rotation = direction
 	
-	Global.hitstop(basic_enemy)
+	#Global.hitstop(basic_enemy)

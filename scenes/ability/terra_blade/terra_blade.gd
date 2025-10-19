@@ -15,7 +15,7 @@ func _ready() -> void:
 	var camera = get_tree().get_first_node_in_group("GameCamera") as GameCamera
 	if camera == null:
 		return
-	camera.apply_scaling(1,0.2)
+	camera.apply_shake(1,0.2)
 
 
 func _process(delta: float) -> void:

@@ -18,7 +18,8 @@ func _ready() -> void:
 func on_died() -> void:
 	if owner == null || not owner is Node2D:
 		return
-		
+	owner.count -= 1
+	print("enemy_count:",owner.count)
 	var spawn_position = owner.global_position
 	var spawn_rotation = ((owner as BasicEnemy).get_player_direction()).angle() - PI/2
 	

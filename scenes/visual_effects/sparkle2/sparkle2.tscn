@@ -1,6 +1,19 @@
-[gd_scene load_steps=10 format=3 uid="uid://c5iwefva5tfr6"]
+[gd_scene load_steps=13 format=3 uid="uid://dya08fnfvqlu8"]
 
-[ext_resource type="Texture2D" uid="uid://77m5yo8jaakq" path="res://scenes/visual_effects/sparkle/Sparkle.png" id="1_425bt"]
+[ext_resource type="Texture2D" uid="uid://dwxjc6kr7dau5" path="res://scenes/visual_effects/sparkle2/红黑砍击特效.png" id="1_pjpnb"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_pjpnb"]
+particles_animation = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 3
+particles_anim_loop = true
+
+[sub_resource type="Curve" id="Curve_pjpnb"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_rqo65"]
+curve = SubResource("Curve_pjpnb")
 
 [sub_resource type="Curve" id="Curve_g65fj"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 0.989883), 0.0, 0.0, 0, 0]
@@ -10,7 +23,7 @@ point_count = 2
 curve = SubResource("Curve_g65fj")
 
 [sub_resource type="Curve" id="Curve_425bt"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.495851, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.495851, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
 point_count = 3
 
 [sub_resource type="CurveTexture" id="CurveTexture_g65fj"]
@@ -18,12 +31,13 @@ curve = SubResource("Curve_425bt")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_g65fj"]
 particle_flag_disable_z = true
-angle_min = -45.0
-angle_max = 45.0
+angle_min = -50.5
+angle_max = 1.07288e-05
 gravity = Vector3(0, 0, 0)
 scale_min = 0.3
 scale_max = 0.3
 scale_curve = SubResource("CurveTexture_g65fj")
+alpha_curve = SubResource("CurveTexture_rqo65")
 emission_curve = SubResource("CurveTexture_5ug7b")
 
 [sub_resource type="Animation" id="Animation_gxy3c"]
@@ -104,10 +118,11 @@ _data = {
 [node name="Sparkle" type="Node2D"]
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
-amount = 2
+material = SubResource("CanvasItemMaterial_pjpnb")
+amount = 1
 sub_emitter = NodePath(".")
-texture = ExtResource("1_425bt")
-lifetime = 0.2
+texture = ExtResource("1_pjpnb")
+lifetime = 0.5
 one_shot = true
 explosiveness = 1.0
 local_coords = true

@@ -5,6 +5,8 @@ class_name Player
 
 const MAX_SPEED = 125
 const ACCELERATION_SMOOTHING = 25
+const EFFECT_01 = preload("res://scenes/visual_effects/001/effect_01.tscn")
+const SPARKLE = preload("res://scenes/visual_effects/sparkle/sparkle.tscn")
 
 signal current_upgrade_changed(upgrade:Ability)
 
@@ -28,6 +30,7 @@ var upgrades_index:int = 0:
 			val = upgrades.size() - 1
 		upgrades_index = val%upgrades.size()
 		current_upgrade = upgrades[upgrades_index]
+var effect_count:int = 0 ##特效数量
 
 
 func _ready() -> void:
@@ -51,8 +54,17 @@ func _process(delta: float) -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("up"):
 		upgrades_index -= 1
+		#for i in 500:
+			#spawn_effect()
+			#effect_count += 1
+			#print("effect_count:",effect_count)
 	elif event.is_action_pressed("down"):
 		upgrades_index += 1
+	
+func spawn_effect()->void:
+	var effect = SPARKLE.instantiate()
+	call_deferred("add_child",effect)
+	effect = self.global_position
 	
 	
 func update_animation(direction:Vector2) -> void:
