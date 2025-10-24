@@ -13,7 +13,7 @@ void fragment(){
 	vec4 orignal_color = texture(TEXTURE,UV);
 	vec4 noise_color1 = texture(noise_texture1,UV + offset1*TIME);
 	vec4 noise_color2 = texture(noise_texture2,UV + offset2*TIME);
-	
+
 	float gray_scale = (orignal_color.r + orignal_color.g + orignal_color.b)/3.0;
 	if (orignal_color.r <= 0.2){
 		orignal_color.a = 0.;
@@ -23,5 +23,5 @@ void fragment(){
 	}
 	//vec4 green = vec4(0.7,0.9,0.1,1);
 	COLOR = orignal_color;
-	
+
 }

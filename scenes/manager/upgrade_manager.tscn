@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://deylpjqnbwm00"]
+[gd_scene load_steps=12 format=3 uid="uid://deylpjqnbwm00"]
 
 [ext_resource type="Script" uid="uid://cd3hp6dbqeymd" path="res://scenes/manager/upgrade_manager.gd" id="1_pfuvr"]
 [ext_resource type="Resource" uid="uid://c5dtgsbdf01rq" path="res://resources/upgrades/sword_rate.tres" id="3_odk14"]
@@ -10,6 +10,7 @@
 [ext_resource type="Resource" uid="uid://7a8rnrmdtu32" path="res://resources/upgrades/terra_blade.tres" id="7_1ry7y"]
 [ext_resource type="Resource" uid="uid://h37gsqm1qy42" path="res://resources/upgrades/sword_damage.tres" id="8_ekrwe"]
 [ext_resource type="Resource" uid="uid://da1qgd8o5kyvh" path="res://resources/upgrades/muramasa.tres" id="10_ekrwe"]
+[ext_resource type="Resource" uid="uid://dfqdau8jxhqff" path="res://resources/upgrades/pink_cubic.tres" id="11_kh7kr"]
 
 [node name="UpgradeManager" type="Node"]
 script = ExtResource("1_pfuvr")
@@ -22,3 +23,4 @@ upgrade_sword_rate = ExtResource("3_odk14")
 upgrade_sword_damage = ExtResource("8_ekrwe")
 upgrade_terra_blade = ExtResource("7_1ry7y")
 upgrade_muramasa = ExtResource("10_ekrwe")
+upgrade_pink_cubic = ExtResource("11_kh7kr")

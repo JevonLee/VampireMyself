@@ -10,6 +10,6 @@ func _ready() -> void:
 	
 func _process(delta: float) -> void:
 	add_point(to_local(target_position.global_position))
-	if points.size() > 60:
+	if points.size() > 20:
 		remove_point(0)
 		remove_point(1)

@@ -8,5 +8,5 @@ void fragment(){
 	vec2 uv = UV * repeat + offset;
 	vec4 orignal_color = texture(TEXTURE,uv);
 	COLOR = orignal_color;
-	
+
 }

@@ -12,6 +12,7 @@ class_name UpgradeManager
 @export var upgrade_sword_damage:AbilityUpgrade
 @export var upgrade_terra_blade:AbilityUpgrade
 @export var upgrade_muramasa:AbilityUpgrade
+@export var upgrade_pink_cubic:AbilityUpgrade
 
 var current_upgrades = {}
 var upgrade_pool:WeightedTable = WeightedTable.new()
@@ -25,6 +26,7 @@ func _ready() -> void:
 	#upgrade_pool.add_item(upgrade_sword_rate,10)
 	upgrade_pool.add_item(upgrade_terra_blade,10)
 	upgrade_pool.add_item(upgrade_muramasa,10)
+	upgrade_pool.add_item(upgrade_pink_cubic,15)
 	
 	experience_manager.level_up.connect(on_level_up)
 	

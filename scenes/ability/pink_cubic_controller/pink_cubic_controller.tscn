@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://cjr0dvlblpfwf"]
+
+[ext_resource type="Script" uid="uid://dmlwfcvx7ipue" path="res://scenes/ability/pink_cubic_controller/pink_cubic_controller.gd" id="1_g70hw"]
+[ext_resource type="PackedScene" uid="uid://dtblcqeqoot3n" path="res://scenes/ability/pink_cubic/pink_cubic.tscn" id="2_xoqhr"]
+
+[node name="MurasamaController" type="Node"]
+script = ExtResource("1_g70hw")
+murasama_scene = ExtResource("2_xoqhr")
+
+[node name="Timer" type="Timer" parent="."]
